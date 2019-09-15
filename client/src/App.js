@@ -51,6 +51,9 @@ const Form = styled.form`
   justify-content: center;
   flex-direction: column;
   flex-grow: 1;
+  @media (min-width: 1624px) {
+    margin: 0 20em;
+  }
 `;
 const FormInput = styled.input`
   margin: 10px 0;
@@ -72,23 +75,23 @@ const App = () => {
       <nav>
         <Heading>
           <List>
-            <ReactLink to="/">Home</ReactLink>
+            <ReactLink to='/'>Home</ReactLink>
           </List>
           <List>
-            <ReactLink to="/contact">Contact</ReactLink>
+            <ReactLink to='/contact'>Contact</ReactLink>
           </List>
           <List>
-            <ReactLink to="/Login">Login</ReactLink>
+            <ReactLink to='/Login'>Login</ReactLink>
           </List>
           <List>
-            <ReactLink to="/SignUp">Sign Up</ReactLink>
+            <ReactLink to='/SignUp'>Sign Up</ReactLink>
           </List>
         </Heading>
       </nav>
-      <Route path="/" exact component={Home} />
-      <Route path="/contact" exact component={Contact} />
-      <Route path="/login" exact component={Login} />
-      <Route path="/signup" exact component={SignUp} />
+      <Route path='/' exact component={Home} />
+      <Route path='/contact' exact component={Contact} />
+      <Route path='/login' exact component={Login} />
+      <Route path='/signup' exact component={SignUp} />
     </Router>
   );
 };
@@ -145,30 +148,30 @@ class SignUp extends Component {
       <Container>
         <Form onSubmit={this.handleSubmit}>
           <FormInput
-            type="text"
+            type='text'
             value={this.state.value}
             onChange={this.handleChange}
-            placeholder="Name"
+            placeholder='Name'
           />
           <FormInput
-            type="email"
-            placeholder="Email"
+            type='email'
+            placeholder='Email'
             value={this.state.email}
             onChange={this.handleChangeEmail}
           />
           <FormInput
-            type="password"
-            placeholder="Password"
+            type='password'
+            placeholder='Password'
             value={this.state.password}
             onChange={this.handleChangePassword}
           />
           <FormInput
-            type="password"
-            placeholder="Re-type Password"
+            type='password'
+            placeholder='Re-type Password'
             value={this.state.password}
             onChange={this.handleChangePassword}
           />
-          <FormSubmit type="submit" value="Submit" />
+          <FormSubmit type='submit' value='Submit' />
         </Form>
       </Container>
     );
